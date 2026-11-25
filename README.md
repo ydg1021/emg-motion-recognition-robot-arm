@@ -33,7 +33,7 @@ The code covers three sensing set-ups (a custom Arduino EMG/IMU band, a Myo armb
 | `archive/usb_prototype_2017-06/` | First offline segmentation script for six recorded channels. |
 | `archive/daq_4ch_2019-07/` | Earlier four-channel DAQ prototype: collector, reshaping and online test. |
 | `archive/myo_jaco_2019-05/` | Earlier Myo-to-arm script in which a gesture triggers a transfer of the IMU pose change to the arm. |
-| `docs/emg_robot_arm_demo.gif` | Short clip of the arm during an online recognition run. |
+| `docs/` | Figures and short clips shown in this README. |
 
 ## How it works
 
@@ -80,6 +80,22 @@ The code covers three sensing set-ups (a custom Arduino EMG/IMU band, a Myo armb
 | `KNN.m` | `fitcknn` with Euclidean distance, 5 neighbours, standardized predictors, 1600 predictors, 6 classes and 5-fold cross-validation |
 | `TestForKNNCode.m` | predictions of 15 stored KNN model structs (`cos*`, `che*`, `Che*` with suffixes 1, 3, 5, 7, 9) |
 | `emg_test_neural3.m` | online KNN prediction for 6 gestures (Hold Fist, Hold Stretch, Hand Out, Hand In, Fist Out, Fist In) |
+
+## Figures
+
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="docs/system_overview.png" alt="System configuration" width="400" /><br><sub>System configuration from the M.S. defense slides: wireless EMG and IMU acquisition, signal processing and a neural network in MATLAB, and control input to the 6-DOF robot arm.</sub></td>
+    <td align="center" width="50%"><img src="docs/custom_emg_band.png" alt="Custom EMG band" width="200" /><br><sub>The custom EMG band used in the first experiments.</sub></td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2"><img src="docs/rvc_normalization.png" alt="EMG trials before and after RVC normalization" width="760" /><br><sub>Processed EMG of repeated trials (three channels side by side) before normalization, in volts (left), and after normalization by the reference voluntary contraction, RVC (right).</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/online_recognition.gif" alt="Online recognition screen recording" width="400" /><br><sub>Screen recording of an online recognition run: the recognized motion is printed above the incoming signal (6x speed).</sub></td>
+    <td align="center"><img src="docs/lego_excavator_demo.gif" alt="LEGO EV3 excavator arm" width="230" /><br><sub>LEGO EV3 excavator arm driven by recognized armband gestures (cropped, 2x speed).</sub></td>
+  </tr>
+</table>
 
 ## Requirements
 
